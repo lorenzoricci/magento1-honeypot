@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Thelema
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Thelema Commercial License
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ * @category    Thelema
+ * @package     Thelema_HoneyPot
+ * @copyright   Copyright (c) 2013-2017 HoneyPot (http://www.thelema-ict.com)
+ * @author      Lorenzo Ricci <lricci@thelema-ict.com>
+ * @license     http://www.thelema-ict.com/commercial-license-agreement  Thelema Commercial License
+ */
+-->
+<config>
+    <modules>
+        <Thelema_HoneyPot>
+            <version>0.1.0</version>
+        </Thelema_HoneyPot>
+    </modules>
+
+    <global>
+        <models>
+            <thelema_honeypot>
+                <class>Thelema_HoneyPot_Model</class>
+                <resourceModel>thelema_honeypot_resource</resourceModel>
+            </thelema_honeypot>
+        </models>
+        <helpers>
+            <thelema_honeypot>
+                <class>Thelema_HoneyPot_Helper</class>
+            </thelema_honeypot>
+        </helpers>
+        <blocks>
+            <thelema_honeypot>
+                <class>Thelema_HoneyPot_Block</class>
+            </thelema_honeypot>
+        </blocks>
+        <resources>
+            <thelema_honeypot_setup>
+                <setup>
+                    <module>Thelema_HoneyPot</module>
+                    <class>Thelema_HoneyPot_Model_Resource_Setup</class>
+                </setup>
+            </thelema_honeypot_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <events>
+            <!-- Hooking to Magento's default event "controller_action_predispatch" -->
+
+            <controller_action_predispatch>
+                <observers>
+                    <thelema_honeypot>
+                        <class>thelema_honeypot/observer</class>
+                        <method>hookToControllerActionPreDispatch</method>
+                    </thelema_honeypot>
+                </observers>
+            </controller_action_predispatch>
+        </events>
+
+
+        <layout>
+            <updates>
+                <module>
+                    <file>honeypot.xml</file>
+                </module>
+            </updates>
+        </layout>
+
+    </frontend>
+
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <thelema_honeypot>
+                                            <title>Thelema Honeypot</title>
+                                        </thelema_honeypot>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <thelema_honeypot>
+            <honeypot>
+                <input_name>alter_mail</input_name>
+            </honeypot>
+        </thelema_honeypot>
+    </default>
+
+
+</config>

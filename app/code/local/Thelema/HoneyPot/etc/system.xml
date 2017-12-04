@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Thelema
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Thelema Commercial License
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ * @category    Thelema
+ * @package     Thelema_HoneyPot
+ * @copyright   Copyright (c) 2013-2017 HoneyPot (http://www.thelema-ict.com)
+ * @author      Lorenzo Ricci <lricci@thelema-ict.com>
+ * @license     http://www.thelema-ict.com/commercial-license-agreement  Thelema Commercial License
+ */
+-->
+<config>
+    <tabs>
+        <thelema translate="label" module="thelema_honeypot">
+            <label>Thelema</label>
+            <sort_order>250</sort_order>
+        </thelema>
+    </tabs>
+    <sections>
+        <thelema_honeypot module="thelema_honeypot">
+            <label>Honeypot</label>
+            <tab>thelema</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+
+                <marketing translate="label">
+                    <label>Thelema</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <comment>
+                        <![CDATA[
+                    <a href="http://www.thelema-ict.com" target="_blank" style="height: 40px !important; width: 40px !important; margin-bottom: 5px;"><img src="http://www.thelema-ict.com/logo-thelema-color.svg" style="border:none; width: 40px !important; height: 40px !important" alt="Thelema"></a>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <strong>Tailored by Thelema - <script>var today=new Date(); document.write(today.getFullYear());</script> <a href="http://www.thelema-ict.com" target="_blank">www.thelema-ict.com</a> / <a href="mailto:info@thelema-ict.com">info@thelema-ict.com</a></strong><br /><br/>
+                    <hr />
+                    ]]>
+                    </comment>
+                </marketing>
+
+                <honeypot translate="label">
+                    <label>Honeypot</label>
+                    <comment>Parameters allowed for configuration</comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>5</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <input_name translate="label">
+                            <label>Input name</label>
+                            <comment>Input name that will appear in form</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </input_name>
+                    </fields>
+                </honeypot>
+
+            </groups>
+        </thelema_honeypot>
+
+    </sections>
+</config>
